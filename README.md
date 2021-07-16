@@ -10,4 +10,9 @@
 - Thanks to [Britany Chiang](https://github.com/bchiang7) for my Design Ispiration
 
 
----
+## Progress 🛠
+
+- Add Responsive
+- Add Interactivity
+- Send Mail
+- Download CV
