@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        purlpe: {
+        brand: {
           lightest: '#FDEBFF',
           light: '#F495FF',
           DEFAULT: '#E300FF',
