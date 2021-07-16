@@ -4,6 +4,6 @@
 
 @layer components {
    .btn {
-      @apply inline-block px-3 py-2 rounded-md border border-brand hover:text-brand-light hover:border-brand-light;
+      @apply inline-block px-3 py-2 rounded-md border border-brand hover:text-brand-darkest hover:border-brand hover:bg-brand;
    }
 }
