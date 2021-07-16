@@ -18,7 +18,7 @@ module.exports = {
         poppins: 'Poppins, sans-serif'
       },
       fontSize: {
-        'headline': '4rem'
+        'headline': 'clamp(2rem,12vw,4rem)'
       }
     },
   },
