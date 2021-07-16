@@ -6,4 +6,8 @@
    .btn {
       @apply inline-block px-3 py-2 rounded-md border border-brand hover:text-brand-darkest hover:border-brand hover:bg-brand;
    }
+
+   .section-title {
+      @apply relative text-3xl text-gray-100 before:empty before:h-1/2 before:w-12 before:border-t-2 before:border-solid before:border-brand flex items-center gap-4 mb-16;
+   }
 }
