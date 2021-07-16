@@ -16,6 +16,9 @@ module.exports = {
       fontFamily: {
         headline: 'Inter, sans-serif',
         poppins: 'Poppins, sans-serif'
+      },
+      fontSize: {
+        'headline': '4rem'
       }
     },
   },
