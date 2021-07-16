@@ -1,6 +1,6 @@
 module.exports = {
   mode: 'jit',
-  purge: ['./index.html'],
+  purge: ['./index.html', './js/**/*.js'],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
@@ -9,7 +9,7 @@ module.exports = {
           lightest: '#FDEBFF',
           light: '#F495FF',
           DEFAULT: '#E300FF',
-          dark: '##9805AA',
+          dark: '#9805AA',
           darkest: '#0D000F'
         }
       },
@@ -25,5 +25,9 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-pseudo')({
+      empty: true
+    })
+  ],
 }

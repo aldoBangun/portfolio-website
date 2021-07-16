@@ -8,12 +8,12 @@
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="css/tailwind.css">
+   <link rel="stylesheet" href="./css/tailwind.css">
    <title>Aldo Bangun</title>
 </head>
 <body class="bg-brand-darkest font-poppins">
-   <header id="home" class=" fixed left-0 top-0 right-0">
-      <nav class="container flex items-center justify-between text-brand mx-auto h-24">
+   <header class="fixed left-0 top-0 right-0 backdrop-filter backdrop-blur-md bg-brand-darkest bg-opacity-90 z-40 h-20">
+      <nav class="relative container flex items-center justify-between text-brand mx-auto h-full z-50">
          <div>
             <a class="uppercase font-semibold tracking-widest" href="#home">Aldo Bangun</a>
          </div>
@@ -27,7 +27,7 @@
       </nav>
    </header>
 
-   <section class="h-screen flex items-center">
+   <section id="home" class="h-screen flex items-center">
       <div class="container mx-auto">
          <div class="mb-12">
             <h1 class="text-headline font-headline text-gray-100 max-w-4xl mb-8 font-normal leading-none">Build website that can help people grow their bussiness</h1>
@@ -42,5 +42,24 @@
          </div>
       </div>
    </section>
+
+   <section id="about" class="mb-20">
+      <div class="container mx-auto">
+         <h2 class="section-title"> About </h2>
+         <div class="flex justify-center gap-20">
+            <div class="w-[30rem]">
+               <h3 class="text-brand text-4xl mb-6">Background</h3>
+               <p class="text-gray-500 mb-10">Mostly learn Front-End Web Technologies, but I also have knowledge on UI/UX Design & Back-End Web Development. I also love to create maintainable and clead code.</p>
+               <h3 class="text-brand text-4xl mb-6">Skills</h3>
+               <ul id="skills" class="text-gray-500 grid grid-cols-2 gap-4"></ul>
+            </div>
+            <div class="relative w-96 after:empty after:absolute after:inset-0 after:bg-brand-dark after:mix-blend-multiply after:transition hover:after:bg-transparent">
+               <img class="rounded-md object-cover object-right h-[25rem]" src="./img/profile-pic.JPG" alt="profile-picture">
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <script src="./js/script.js"></script>
 </body>
 </html>
