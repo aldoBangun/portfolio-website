@@ -4,7 +4,8 @@
   "description": "my personal portfolio website",
   "main": "index.js",
   "scripts": {
-    "dev": "vite"
+    "dev": "vite",
+    "build": "vite build"
   },
   "keywords": [
     "portfolio"
