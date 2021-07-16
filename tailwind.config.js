@@ -12,6 +12,10 @@ module.exports = {
           dark: '##9805AA',
           darkest: '#0D000F'
         }
+      },
+      fontFamily: {
+        headline: 'Inter, sans-serif',
+        poppins: 'Poppins, sans-serif'
       }
     },
   },
