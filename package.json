@@ -13,10 +13,14 @@
   "author": "Aldo Bangun",
   "license": "MIT",
   "devDependencies": {
+    "@vitejs/plugin-vue": "^1.2.5",
     "autoprefixer": "^10.3.1",
     "postcss": "^8.3.5",
     "tailwindcss": "^2.2.4",
     "tailwindcss-pseudo": "^1.0.3",
     "vite": "^2.4.2"
+  },
+  "dependencies": {
+    "vue": "^3.1.5"
   }
 }
