@@ -1,12 +1,7 @@
-const skills = ['HTML5', 'CSS3', 'Javascript / ES6+', 'Tailwind CSS', 'Vue.js']
-const skillsList = document.querySelector('#skills')
+import { createApp } from 'vue'
 
-const generateSkillItems = ()=> {
-   return skills.map(skill => {
-      return `
-         <li class="flex items-center gap-4"> <span class="text-sm text-brand-light"> ▶ </span> ${skill} </li>
-      `
-   }).join('')
-}
+import SkillList from './components/SkillList.vue'
 
-skillsList.innerHTML = generateSkillItems()
+const app = createApp(SkillList)
+
+app.mount('#skills')
