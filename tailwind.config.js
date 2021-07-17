@@ -23,6 +23,16 @@ module.exports = {
         'headline': 'clamp(2rem,12vw,4rem)'
       }
     },
+    container: {
+      center: true,
+      screens: {
+        '2xl': '1088px',
+        xl: '1088px',
+        lg: '1088px',
+        md: '786px',
+        sm: '640px'
+      }
+    },
   },
   variants: {
     extend: {},
