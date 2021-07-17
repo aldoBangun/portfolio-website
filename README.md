@@ -19,4 +19,5 @@
 
 ## Bugs 🐞
 
-- Tailwind backdrop-filter utilites seems not working 😥
+- Tailwind backdrop-filter utilites seems not working (Fixed, but...) 😥 
+- backdrop-filter not working well when using mix-blend-mode 😫
