@@ -16,3 +16,7 @@
 - Add Interactivity
 - Send Mail
 - Download CV
+
+## Bugs 🐞
+
+- Tailwind backdrop-filter utilites seems not working 😥
