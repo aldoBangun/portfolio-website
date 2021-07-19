@@ -1,7 +1,8 @@
 import { createApp } from 'vue'
 
 import SkillList from './components/SkillList.vue'
+import ContactForm from './components/ContactForm.vue'
 
-const app = createApp(SkillList)
+createApp(SkillList).mount('#skills')
 
-app.mount('#skills')
+createApp(ContactForm).mount('#contact-form')
