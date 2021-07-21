@@ -19,14 +19,12 @@ sections.forEach(section => {
    tl.from(section, {
       opacity: 0,
       y: 200,
-
    })
 
    ScrollTrigger.create({
       trigger: section,
       opacity: 0,
       start: "top center",
-      markers: true,
       onEnter: () => { tl.play()},
    })
 })
