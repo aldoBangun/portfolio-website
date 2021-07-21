@@ -1,9 +1,12 @@
 import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
+console.log(ScrollTrigger)
 
 const theHeader = document.querySelector('header')
-
-
-const timeline = gsap.timeline({ defaults: { opacity: 0, duration: 1} })
+const sections = gsap.utils.toArray('section')
+const timeline = gsap.timeline({ defaults: { opacity: 0, duration: 0.7} })
 
 timeline
    .from('#nav-brand', { y: 100})
@@ -12,7 +15,23 @@ timeline
    .from('#home h1', { x: '-100' }, '-=0.5')
    .from('#cta a', { x: '100', stagger: 0.2 }, '-=0.5')
 
+sections.forEach(section => {
+   const tl = gsap.timeline({ paused: true })
 
+   tl.from(section, {
+      opacity: 0,
+      y: 200,
+
+   })
+
+   ScrollTrigger.create({
+      trigger: section,
+      opacity: 0,
+      start: "top center",
+      markers: true,
+      onEnter: () => { tl.play()},
+   })
+})
 
 window.addEventListener('DOMContentLoaded', toggleNavBorder)
 
