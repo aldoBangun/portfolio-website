@@ -1,6 +1,20 @@
-const theHeader = document.querySelector('header')
-let lastScroll = 0;
+import gsap from 'gsap'
 
+const theHeader = document.querySelector('header')
+
+
+const timeline = gsap.timeline({ defaults: { opacity: 0, duration: 1} })
+
+timeline
+   .from('#nav-brand', { y: 100})
+   .from('#nav-menu li', { y: 100, stagger: 0.2 }, '-=0.5')
+   .from('#home p', { y: '-100' }, '-=0.5')
+   .from('#home h1', { x: '-100' }, '-=0.5')
+   .from('#cta a', { x: '100', stagger: 0.2 }, '-=0.5')
+
+
+
+window.addEventListener('DOMContentLoaded', toggleNavBorder)
 
 window.addEventListener('scroll', () => {
    toggleNavBorder()
@@ -17,6 +31,7 @@ function toggleNavBorder() {
    }
 }
 
+let lastScroll = 0;
 
 function toggleNavVisibility() {
 
