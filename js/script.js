@@ -2,9 +2,7 @@ import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
-console.log(ScrollTrigger)
 
-const theHeader = document.querySelector('header')
 const sections = gsap.utils.toArray('section')
 const timeline = gsap.timeline({ defaults: { opacity: 0, duration: 0.7} })
 
@@ -32,6 +30,8 @@ sections.forEach(section => {
       onEnter: () => { tl.play()},
    })
 })
+
+const theHeader = document.querySelector('header')
 
 window.addEventListener('DOMContentLoaded', toggleNavBorder)
 
