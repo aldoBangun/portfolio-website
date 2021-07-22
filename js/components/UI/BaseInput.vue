@@ -10,7 +10,7 @@
    </div>
    <div class="mb-8" v-else>
       <label :for="name" class="block text-brand mb-3 capitalize"> {{ name }} </label>
-      <input type="text" :id="name" class="form-control" :ref="name" />
+      <input :type="type" :id="name" class="form-control" :ref="name" />
    </div>   
 </template>
 
@@ -21,6 +21,11 @@ export default {
      name: {
         type: String,
         required: true
+     },
+     type: {
+        type: String,
+        required: false,
+        default: "text"
      },
      textarea: {
         type: Boolean,
