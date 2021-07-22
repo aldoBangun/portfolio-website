@@ -14,7 +14,7 @@
 
 - Add Responsive
 - Add Interactivity
-- Send Mail
+- Add New Section "Projects"
 - Download CV
 
 ## Bugs 🐞
