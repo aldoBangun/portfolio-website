@@ -27,9 +27,9 @@
          <h1 class="text-2xl text-brand pb-4 font-bold">Email Sent</h1>
          <p class="text-lg text-brand-dark">Yay, Thanks for mailing me!! 😁</p>
       </base-modal>
-      <base-modal :open="isError" @close-modal="closeModal">
+      <base-modal :open="errorMessage !== ''" @close-modal="closeModal">
          <h1 class="text-2xl text-brand pb-4 font-bold">Failed to send</h1>
-         <p class="text-lg text-brand-dark">Woopss, can't send your email. Please try again later 😭</p>
+         <p class="text-lg text-brand-dark">{{ errorMessage }}</p>
       </base-modal>
       <BaseLoading :loading="isLoading" />
    </teleport>
@@ -47,7 +47,7 @@ export default {
    data() {
       return {
          isSentEmail: false,
-         isError: false,
+         errorMessage: "",
          isLoading: false
       }
    },
@@ -64,9 +64,12 @@ export default {
       },
       createEmailTemplate() {
          const template = {}
-         
+
          for(const prop in this.$refs) {
             template[prop] = this.$refs[prop].$refs[prop].value
+            if(template[prop].trim() === "") {
+               return false
+            }
          }
 
          return template
@@ -75,23 +78,27 @@ export default {
          const emailTemplate = this.createEmailTemplate()
          this.isLoading = true
 
+         if(!emailTemplate) {
+            this.isLoading = false
+            this.errorMessage = "Input fields cannot be empty! 🤭"
+            return 
+         }
+
          try {
             await emailJs.send(SERVICE_ID, TEMPLATE_ID, emailTemplate ,USER_ID)
 
             this.isLoading = false
             this.isSentEmail = true
-         } catch (_err) {
-            setTimeout(()=> {
-               this.isLoading = false
-               this.isError = true
-            }, 2000)
-         }
 
-         this.resetForm()
+            this.resetForm()
+         } catch (_err) {
+               this.isLoading = false
+               this.errorMessage = "Woopss, can't send your email. Please try again later 😭"
+         }
       },
       closeModal() {
          this.isSentEmail = false
-         this.isError = false
+         this.errorMessage = ""
       }
    }
 };
