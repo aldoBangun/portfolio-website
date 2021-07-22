@@ -1,14 +1,18 @@
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
+import ScrollToPlugin from 'gsap/ScrollToPlugin'
 
 gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollToPlugin)
+
+// Animations on Landing Page
 
 const sections = gsap.utils.toArray('section')
 const timeline = gsap.timeline({ defaults: { opacity: 0, duration: 0.7} })
 
 timeline
    .from('#nav-brand', { y: 100})
-   .from('#nav-menu li', { y: 100, stagger: 0.2 }, '-=0.5')
+   .from('#nav-menu li', { y: '-50', stagger: 0.1 }, '-=0.5')
    .from('#home p', { y: '-100' }, '-=0.5')
    .from('#home h1', { x: '-100' }, '-=0.5')
    .from('#cta a', { x: '100', stagger: 0.2 }, '-=0.5')
@@ -24,10 +28,12 @@ sections.forEach(section => {
    ScrollTrigger.create({
       trigger: section,
       opacity: 0,
-      start: "top center",
+      start: "top 75%",
       onEnter: () => { tl.play()},
    })
 })
+
+// Hide || Show Navbar & Navbar Border
 
 const theHeader = document.querySelector('header')
 
@@ -60,3 +66,17 @@ function toggleNavVisibility() {
 
    lastScroll = window.scrollY
 }
+
+
+// Smooth Scrolling
+
+const navLinks = gsap.utils.toArray('.nav-link')
+
+navLinks.forEach(link => {
+   const targetElement = document.querySelector(link.hash)
+
+   link.addEventListener('click', e => {
+      e.preventDefault()
+      gsap.to(window, { duration: 0.5, scrollTo: {y: targetElement, offsetY: 86} })
+   })
+})
