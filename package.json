@@ -4,7 +4,7 @@
   "description": "my personal portfolio website",
   "main": "index.js",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -24,6 +24,7 @@
   "dependencies": {
     "emailjs-com": "^3.2.0",
     "gsap": "^3.7.1",
+    "hover-effect": "^1.1.0",
     "vue": "^3.1.5"
   }
 }
