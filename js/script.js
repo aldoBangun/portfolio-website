@@ -89,7 +89,7 @@ const hoverEffect = new HoverEffect({
    intensity: 0.3,
    speedIn: 0.8,
    speedOut: 0.8,
-   image1: './img/image-1.jpg',
-   image2: './img/profile-pic.jpg',
+   image1: '/img/image-1.jpg',
+   image2: '/img/profile-pic.jpg',
    displacementImage: './img/4.png'
 })
