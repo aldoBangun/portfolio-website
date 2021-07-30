@@ -2,6 +2,9 @@ import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import ScrollToPlugin from 'gsap/ScrollToPlugin'
 import HoverEffect from 'hover-effect'
+import image1 from '../img/image-1.jpg'
+import image2 from '../img/image-2.jpg'
+import displacementImage from '../img/4.png'
 
 gsap.registerPlugin(ScrollTrigger)
 gsap.registerPlugin(ScrollToPlugin)
@@ -84,12 +87,12 @@ navLinks.forEach(link => {
 
 // Hover Effect
 
-const hoverEffect = new HoverEffect({
+const hover = new HoverEffect({
    parent: document.querySelector('#profile-pic'),
    intensity: 0.3,
    speedIn: 0.8,
    speedOut: 0.8,
-   image1: '/img/image-1.jpg',
-   image2: '/img/profile-pic.jpg',
-   displacementImage: './img/4.png'
+   image1,
+   image2,
+   displacementImage,
 })
